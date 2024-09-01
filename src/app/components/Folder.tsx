@@ -1,18 +1,19 @@
 import { FolderIcon } from 'lucide-react'
 
-export default function Folder({ folder, onClick }) {
+export default function Folder({ folder, onClick, onHover, cursorPosition }) {
   return (
     <div
-      className="relative flex flex-col items-center justify-center p-4 cursor-pointer group"
+      className="relative flex flex-col items-center justify-center w-24 h-24 cursor-pointer group"
       onClick={onClick}
+      onMouseEnter={onHover}
+      onMouseLeave={() => onHover(null)}
     >
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 transition-all duration-300 group-hover:bg-white/20 group-hover:scale-105">
-        <FolderIcon className="w-16 h-16 text-white" />
+      <div className="bg-gray-800 rounded-lg p-2 transition-all duration-300 group-hover:bg-gray-700 group-hover:scale-105 border border-neon-blue shadow-neon">
+        <FolderIcon className="w-12 h-12 text-neon-blue" />
       </div>
-      <span className="mt-2 text-sm font-medium text-white">{folder.name}</span>
-      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 p-2 bg-black/70 text-white rounded-lg opacity-0 transition-opacity duration-200 pointer-events-none group-hover:opacity-100">
-        <p className="text-xs">{folder.content}</p>
-      </div>
+      <span className="mt-1 text-xs font-medium text-neon-blue font-cyber truncate w-full text-center">
+        {folder.name}
+      </span>
     </div>
   )
 }

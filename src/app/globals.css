@@ -1,7 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --neon-blue: #00ffff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff00;
+  --neon-yellow: #ffff00;
+  --neon-red: #ff0000;
+}
+
 body {
   cursor: none;
+  font-family: 'Orbitron', sans-serif;
+  background-color: black;
+  color: var(--neon-blue);
+}
+
+.font-cyber {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(var(--neon-blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--neon-blue) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.shadow-neon {
+  box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
+}
+
+@keyframes window-open {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-window-open {
+  animation: window-open 0.3s cubic-bezier(.25, .46, .45, .94) both;
 }

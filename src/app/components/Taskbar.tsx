@@ -1,15 +1,15 @@
-import { AppleIcon, WifiIcon, BatteryIcon, Clock } from 'lucide-react'
+import { Skull, Wifi, Battery, Clock } from 'lucide-react'
 
 export default function Taskbar() {
   return (
-    <div className="absolute top-0 left-0 right-0 bg-black/20 backdrop-blur-md text-white p-2 flex justify-between items-center">
+    <div className="fixed bottom-0 left-0 right-0 bg-gray-900 text-neon-blue p-2 flex justify-between items-center border-t border-neon-blue z-50">
       <div className="flex items-center space-x-4">
-        <AppleIcon className="w-5 h-5" />
-        <span className="font-semibold">Finder</span>
+        <Skull className="w-5 h-5 text-neon-pink" />
+        <span className="font-cyber">CyberOS</span>
       </div>
       <div className="flex items-center space-x-4">
-        <WifiIcon className="w-5 h-5" />
-        <BatteryIcon className="w-5 h-5" />
+        <Wifi className="w-5 h-5" />
+        <Battery className="w-5 h-5" />
         <Clock className="w-5 h-5" />
       </div>
     </div>
